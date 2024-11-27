@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model Rootobject
+
+<div class="text-center m-5">
+    <h1 class="display-4">Recipes</h1>
+    
+</div>
+
+@if(Model.recipes != null)
+{
+
+    <div class="row ">
+
+            @foreach (var item in Model.recipes)
+            {
+            
+                <div class="col-lg-4 col-md-4 col-sm-6  mb-4">
+
+                    <a class="text-decoration-none text-dark " asp-action="Details" asp-route-id="@item.id">
+                            <img src="@item.image" class="w-75" />
+
+                            <h4>@item.name</h4>
+                    <p> <span class="">Rating</span> :  @item.rating</p>
+                    <p> <span class="badge bg-black">Time</span>  @item.cookTimeMinutes Min</p>
+
+
+
+                    </a>
+             </div>
+                
+            }
+
+    </div>
+
+}
+else
+{
+    <p class="alert alert-info">No Recipes! </p>
+}

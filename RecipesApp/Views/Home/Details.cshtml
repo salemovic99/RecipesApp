@@ -1,0 +1,47 @@
+﻿@model Recipe
+
+
+<div class="row gap-3 p-5">
+
+    <div class="col-lg-5">
+
+        <img src="@Model.image" class="w-100" />
+
+    </div>
+
+    <div class="col-lg-6">
+   
+            <h1>@Model.name</h1>
+
+            <p> <span class="badge bg-black">Time</span>  @Model.cookTimeMinutes Min</p>
+            <p> <span class="badge bg-black">Rating</span>  @Model.rating</p>
+
+           <div class="row">
+                <div class="col-lg-5 ">
+                    <h3>ingredients</h3>
+                    @foreach (var item in Model.ingredients)
+                    {
+
+                        <p>- @item</p>
+                    }
+                </div>
+
+
+            <div class="col-lg-7 ">
+                    <h3>instructions</h3>
+                    @foreach (var item in Model.instructions)
+                    {
+
+                        <p>- @item</p>
+                    }
+                </div>
+           </div>
+
+
+
+            
+    </div>
+
+
+
+</div>
