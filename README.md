@@ -19,7 +19,3 @@
 
     Run the app:
         Press Ctrl + F5 to start the application.
-
-License
-
-This project is licensed under the MIT License.
